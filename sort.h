@@ -24,6 +24,16 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/* struct deck_node_s - Struct for a deck node
+ * @value: Value of the node
+ * @next: Pointer to the next node
+ */
+typedef struct deck_node_s
+{
+    int value;
+    struct deck_node_s *next;
+} deck_node_t;
+
 /* Helper functions */
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
@@ -45,6 +55,10 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
+void swap_ints(int *a, int *b);
+int hoare_partition(int *array, size_t size, int left, int right);
+void hoare_sort(int *array, size_t size, int left, int right);
 void quick_sort_hoare(int *array, size_t size);
 int _strcmp(const char *s1, const char *s2);
 char get_value(deck_node_t *card);
